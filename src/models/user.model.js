@@ -19,7 +19,7 @@ const UserSchema = new Schema(
             lowercase: true,
             trim: true,
         },
-        fullname: {
+        fullName: {
             type: String,
             required: true,
             trim: true,
@@ -29,7 +29,7 @@ const UserSchema = new Schema(
             type: String, //cluodinary url
             required: true,
         },
-        converImage: {
+        coverImage: {
             type: String, //cluodinary url
         },
         watchHistory: [
@@ -52,7 +52,7 @@ const UserSchema = new Schema(
 
 UserSchema.pre("save", async function(next){
     if(!this.isModified("password")) return next();
-    this.password = bcrypt.hash(this.password, 10);
+    this.password = await bcrypt.hash(this.password, 10);
     next();
 });
 UserSchema.methods.isPasswordCorrect = async function(password){
