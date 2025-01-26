@@ -372,6 +372,8 @@ const getUserChannelProfile = asyncHandler( async (req, res) => {
     )
 })
 
+console.log("Hello from user controller");
+
 
 
 export {
