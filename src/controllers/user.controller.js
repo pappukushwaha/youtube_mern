@@ -372,6 +372,10 @@ const getUserChannelProfile = asyncHandler( async (req, res) => {
     )
 })
 
+const dilshad = () => {
+    console.log("Dilshad");
+}
+
 
 export {
     registerUser,
